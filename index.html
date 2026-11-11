@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>禮物不踩雷｜生日、交換禮物、離職禮快選</title>
+<meta name="description" content="選場合、送誰、預算，馬上給你不踩雷又有質感的禮物清單，附上這次千萬別送的地雷和卡片一句話。生日、交換禮物、同事離職、喬遷、過年拜訪長輩都適用。">
+<meta property="og:title" content="禮物不踩雷｜3 秒決定要送什麼">
+<meta property="og:description" content="選場合、送誰、預算，給你安全又有質感的禮物，還有這次千萬別送的地雷。">
+<meta property="og:image" content="https://onlyhandrubbing.github.io/liwu/og.png">
+<meta property="og:url" content="https://onlyhandrubbing.github.io/liwu/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://onlyhandrubbing.github.io/liwu/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: a single phone-width column on striped wrapping paper. Questions are ribbon rows of chips; answers are gift tags. */
+:root{
+  --paper:#fff4d9; --stripe:#ffe8b3; --ink:#2d1f3d; --muted:#6d5f78;
+  --tag:#fffdf7; --ribbon:#e0365a; --ribbon-ink:#fff; --mint:#2f9e75; --sun:#ffc93c; --sun-ink:#3a2700; --line:#2d1f3d;
+  --f-hand:"Huninn","Noto Sans TC",system-ui,sans-serif;
+  --f-body:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+  --shadow:0 3px 0 var(--line);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1f1726; --stripe:#271d30; --ink:#f6eefc; --muted:#b3a5bf; --tag:#2c2236; --ribbon:#ff5a7a; --ribbon-ink:#1f0610; --mint:#5fd1a6; --sun:#f5c044; --sun-ink:#2a1c00; --line:#0d0911; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1f1726; --stripe:#271d30; --ink:#f6eefc; --muted:#b3a5bf; --tag:#2c2236; --ribbon:#ff5a7a; --ribbon-ink:#1f0610; --mint:#5fd1a6; --sun:#f5c044; --sun-ink:#2a1c00; --line:#0d0911; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  background-color:var(--paper);background-image:repeating-linear-gradient(135deg,var(--stripe) 0 18px,transparent 18px 52px)}
+.app{max-width:520px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 60px;display:grid;gap:16px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ribbon);outline-offset:2px}
+header{position:relative;background:var(--tag);border:3px solid var(--line);border-radius:22px;padding:20px 18px 18px;box-shadow:var(--shadow);overflow:hidden}
+header::before{content:"";position:absolute;left:0;right:0;top:50%;height:22px;margin-top:-11px;background:var(--ribbon);opacity:.14}
+header::after{content:"";position:absolute;top:0;bottom:0;right:58px;width:22px;background:var(--ribbon);opacity:.14}
+h1{position:relative;font-family:var(--f-hand);font-weight:400;font-size:clamp(30px,8vw,40px);line-height:1.1;margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--ribbon)}
+.lead{position:relative;margin:8px 0 0;color:var(--muted);font-size:15px}
+.bow{position:absolute;right:30px;top:-6px;font-size:44px;transform:rotate(12deg)}
+.q{background:var(--tag);border:3px solid var(--line);border-radius:22px;padding:14px 14px 16px;box-shadow:var(--shadow);display:grid;gap:12px}
+.qrow{display:grid;gap:6px}
+.qrow b{font-family:var(--f-hand);font-weight:400;font-size:19px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:2px solid var(--line);background:var(--tag);border-radius:999px;padding:5px 13px;cursor:pointer;font-size:15px;transition:transform .12s}
+.chip:hover{transform:translateY(-1px)}
+.chip[aria-pressed="true"]{background:var(--sun);color:var(--sun-ink);font-weight:700;transform:rotate(-2deg)}
+.sec{font-family:var(--f-hand);font-size:24px;margin:6px 2px -4px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 8px}
+.sec span{white-space:nowrap}
+.sec small{font-family:var(--f-body);font-size:13px;color:var(--muted)}
+.tags{display:grid;gap:14px}
+.gtag{position:relative;background:var(--tag);border:3px solid var(--line);border-radius:10px 22px 22px 10px;padding:14px 16px 14px 46px;box-shadow:var(--shadow);display:grid;gap:4px;transform:rotate(var(--r,0deg))}
+.gtag::before{content:"";position:absolute;left:14px;top:22px;width:14px;height:14px;border-radius:50%;border:3px solid var(--line);background:var(--paper)}
+.gtag::after{content:"";position:absolute;left:-24px;top:26px;width:42px;height:3px;background:var(--ribbon);transform:rotate(-14deg)}
+.gtag .top{display:flex;align-items:center;gap:10px}
+.gtag .emo{font-size:34px;line-height:1}
+.gtag h3{margin:0;font-size:19px;font-weight:900;line-height:1.25}
+.gtag .price{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.gtag .why{margin:2px 0 0;font-size:15px}
+.gtag .tip{margin:0;font-size:13.5px;color:var(--mint);font-weight:700}
+.gtag .rank{position:absolute;right:12px;top:-12px;background:var(--ribbon);color:var(--ribbon-ink);font-family:var(--f-hand);font-size:14px;border-radius:999px;padding:2px 10px;border:2px solid var(--line)}
+.gtag a{justify-self:start;margin-top:6px;text-decoration:none;font-weight:700;font-size:14px;color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:3px 12px;background:var(--sun)}
+.boom{background:var(--tag);border:3px dashed var(--ribbon);border-radius:22px;padding:14px 16px;display:grid;gap:8px}
+.boom ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.boom li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:15px}
+.boom li span{font-size:22px;line-height:1.2}
+.boom li b{color:var(--ribbon)}
+.card{background:var(--tag);border:3px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow);display:grid;gap:10px}
+.msg{font-family:var(--f-hand);font-size:21px;line-height:1.5;background:var(--paper);border-radius:14px;padding:14px 16px;border:2px dashed var(--line)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:2.5px solid var(--line);background:var(--tag);border-radius:14px;padding:9px 14px;cursor:pointer;font-family:var(--f-hand);font-size:17px;box-shadow:var(--shadow)}
+.btn:active{transform:translateY(3px);box-shadow:none}
+.btn.red{background:var(--ribbon);color:var(--ribbon-ink)}
+.empty{background:var(--tag);border:3px dashed var(--line);border-radius:22px;padding:22px;text-align:center}
+.shareimg{display:grid;justify-items:center;gap:6px}
+.shareimg img{max-width:min(100%,300px);border-radius:12px;border:2px solid var(--line)}
+.fine{font-size:12px;color:var(--muted);margin:0;text-align:center}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:14px;font-weight:700;z-index:40;max-width:calc(100% - 32px);text-align:center}
+.pop{animation:pop .3s ease-out both}
+@keyframes pop{0%{transform:translateY(8px) rotate(var(--r,0deg));opacity:0}100%{transform:rotate(var(--r,0deg));opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <span class="bow" aria-hidden="true">🎀</span>
+    <h1>不知道送什麼？<br><em>3 秒選好不踩雷</em></h1>
+    <p class="lead">點一點場合、送誰、預算，給你安全又有質感的禮物，順便告訴你這次千萬別送什麼。</p>
+  </header>
+
+  <section class="q" aria-label="送禮條件">
+    <div class="qrow"><b>什麼場合？</b><div class="chips" id="c-occ"></div></div>
+    <div class="qrow"><b>送給誰？</b><div class="chips" id="c-rel"></div></div>
+    <div class="qrow"><b>對方大概幾歲？</b><div class="chips" id="c-age"></div></div>
+    <div class="qrow"><b>對方是？</b><div class="chips" id="c-gen"></div></div>
+    <div class="qrow"><b>預算多少？</b><div class="chips" id="c-bud"></div></div>
+  </section>
+
+  <div class="sec"><span>🎁 安全牌</span><small id="sum"></small></div>
+  <div class="tags" id="tags"></div>
+  <div class="row" style="justify-content:center"><button class="btn" id="more" type="button">再換幾個</button></div>
+
+  <div class="sec"><span>💣 這次千萬別送</span></div>
+  <div class="boom"><ul id="boom"></ul></div>
+
+  <div class="sec"><span>✍️ 卡片寫這句</span></div>
+  <div class="card">
+    <div class="msg" id="msg"></div>
+    <div class="row"><button class="btn" id="msgNext" type="button">換一句</button><button class="btn" id="msgCopy" type="button">複製</button></div>
+  </div>
+
+  <div class="card">
+    <div class="row" style="justify-content:center"><button class="btn red" id="share" type="button">做成清單圖，傳給一起送的人</button><button class="btn" id="copyLink" type="button">複製網址</button></div>
+    <div class="shareimg" id="shareBox" hidden><img id="shareImg" alt="禮物清單圖"><span class="fine">長按或右鍵存圖，貼到 LINE、IG、Threads</span></div>
+  </div>
+  <p class="fine">「去蝦皮看」為推薦連結，透過連結購買站長可能獲得分潤，你的價格不受影響。習俗禁忌各家不同，最懂對方的還是你。</p>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(()=>{
+const SITE='https://onlyhandrubbing.github.io/liwu/';
+const AFF={id:'16301320039',sub:'liwu'};
+const buyUrl=kw=>'https://s.shopee.tw/an_redir?origin_link='+encodeURIComponent('https://shopee.tw/search?keyword='+encodeURIComponent(kw))+'&affiliate_id='+AFF.id+'&sub_id='+AFF.sub;
+const OCC=[['bday','生日'],['xchg','交換禮物'],['leave','同事離職'],['thanks','謝禮'],['house','喬遷新居'],['cny','過年拜訪長輩']];
+const REL=[['cw','同事'],['boss','主管'],['fr','朋友'],['cr','曖昧對象'],['pt','另一半'],['el','長輩'],['st','不熟／抽籤']];
+const AGE=[['y','30 歲以下'],['m','30～50'],['s','50 歲以上']];
+const GEN=[['a','不限'],['f','女生'],['m','男生']];
+const BUD=[[300,'300 內'],[500,'500'],[1000,'1000'],[2000,'2000'],[3500,'3000 以上']];
+/* [emoji,name,min,max,occ,rel,age,gender,why,tip,keyword] — '*' = all */
+const G=[
+['🧴','品牌護手霜禮盒',200,700,'bday xchg thanks leave','cw boss fr st cr','yms','a','人人用得到，冬天特別貼心','選無香或淡香，避開濃香水味','護手霜禮盒'],
+['🕯️','香氛蠟燭',250,900,'bday xchg house thanks','fr cr pt st cw','ym','a','房間馬上有氛圍，拍照好看','選玻璃杯裝、有蓋款，送長輩改擴香','香氛蠟燭 禮盒'],
+['🌿','室內擴香瓶',400,1200,'house bday thanks xchg','fr cw boss st pt','yms','a','喬遷最安全，放玄關客廳都適合','木質、白茶香最不挑人','擴香 禮盒'],
+['☕','精品濾掛咖啡禮盒',300,900,'*','cw boss fr st el thanks','yms','a','消耗品不佔空間，喝完不留負擔','挑有產區標示的，外盒質感差很多','濾掛咖啡 禮盒'],
+['🍵','花草茶／茶包禮盒',300,1000,'*','*','yms','a','不喝咖啡的人也能收，溫和不出錯','晚上收到也能喝的無咖啡因款更貼心','茶包 禮盒'],
+['🥤','316 保溫杯',500,1300,'leave xchg bday','cw fr st boss','ym','a','每天會用到，看到就想起你','選霧面莫蘭迪色，避開卡通圖案','保溫杯 316'],
+['📱','手機掛繩',300,700,'xchg bday','fr st cw','y','a','年輕人超愛，價格剛好','選可調長度、附夾片的','手機掛繩'],
+['📷','即可拍底片相機',400,800,'xchg bday','fr st','y','a','拆開就想拍，交換禮物最熱鬧','附一捲備用底片更完整','即可拍 底片相機'],
+['🛋️','保暖毛毯／午睡毯',400,1000,'xchg leave bday','cw fr st','yms','a','辦公室冷氣房必備，不挑人','選可收納成抱枕的款式','午睡毯'],
+['💆','肩頸按摩器',800,4000,'leave bday cny thanks','cw boss el pt','ms','a','久坐族的救星，長輩也實用','選有溫熱功能、可充電的','肩頸按摩器'],
+['🪥','電動牙刷',800,2500,'xchg bday','fr pt st','ym','a','升級日常用品，自己捨不得買','附替換刷頭的組合更划算','電動牙刷'],
+['💨','負離子吹風機',1000,3000,'xchg bday','fr pt cr st','ym','a','頭髮差很多，收到的人都說讚','選輕量、有冷熱風切換的','負離子吹風機'],
+['👔','手持掛燙機',1000,2500,'xchg leave','cw st fr','ym','a','上班族出門前三分鐘救星','選加熱快、可直立掛燙的','手持掛燙機'],
+['📍','防丟器 AirTag 類',600,1200,'xchg bday','fr pt st','ym','a','愛掉鑰匙的人一定用得到','記得問對方是 iPhone 還是安卓','防丟器'],
+['🔋','無線充電座',500,1500,'xchg leave bday','cw fr st boss','ym','a','放辦公桌剛好，實用不浮誇','選三合一可充耳機手錶的','無線充電座'],
+['📒','質感筆記本／手帳',300,900,'leave xchg bday','cw fr st','ym','a','年底送隔年手帳最應景','選線圈可攤平、紙張不透墨的','手帳 2027'],
+['🖋️','好寫的鋼珠筆',500,3000,'leave thanks bday','cw boss','ms','a','新工作簽約第一支筆，有祝福意味','可以刻名字，質感立刻提升','鋼珠筆 禮盒'],
+['💳','皮革名片夾',500,2000,'leave','cw boss','ym','a','祝新工作順利，用得到又有面子','選素面真皮，避開大 logo','名片夾 真皮'],
+['🪴','桌上小盆栽',200,600,'leave house xchg','cw fr st','ym','a','新辦公桌、新家都添點綠','選好養的多肉或空氣鳳梨','多肉植物 盆栽'],
+['💐','永生花／乾燥花',500,1500,'bday thanks','cr pt fr','yms','f','不會凋謝，放很久也好看','避開白色、黃色菊花','永生花'],
+['🍪','品牌餅乾甜點禮盒',300,1200,'thanks cny leave house xchg','*','yms','a','分著吃最不尷尬，部門也能一起享用','選個別包裝，方便分送','餅乾禮盒'],
+['🥜','綜合堅果禮盒',500,1500,'cny thanks','el boss cw','ms','a','健康形象加分，長輩很買單','選無調味、小包裝的','堅果禮盒'],
+['🫖','台灣茶葉禮盒',800,6000,'cny thanks','el boss','ms','a','拜訪長輩最穩的選擇','高山烏龍、東方美人都很體面','茶葉禮盒'],
+['🍎','水果禮盒',600,2000,'cny house thanks','el boss','ms','a','看起來豐盛，全家一起吃','千萬避開梨子，蘋果柳丁最吉利','水果禮盒'],
+['🐔','滴雞精禮盒',800,4000,'cny thanks','el boss','ms','a','長輩補身體，心意很到位','選常溫保存、單包裝的','滴雞精 禮盒'],
+['🛁','泡澡球／入浴劑組',300,800,'xchg bday','fr st cr','y','f','療癒感滿分，女生交換禮物熱門','選天然精油成分','泡澡球 禮盒'],
+['🧼','品牌沐浴旅行組',500,1200,'xchg bday thanks','fr st cw','ym','a','出國旅行剛好用，包裝漂亮','選中性香調男女都能用','沐浴 旅行組'],
+['🧦','羊毛襪禮盒',300,800,'xchg bday','fr pt st','yms','a','冬天保暖，尺寸好挑不出錯','選中性色系的三雙組','羊毛襪 禮盒'],
+['🧣','素色圍巾',600,2000,'bday xchg','pt cr fr el','yms','a','冬天剛好，暖心又不過分','選羊毛混紡、素色或格紋','圍巾 羊毛'],
+['🔑','皮革鑰匙圈／零錢包',500,2000,'bday leave','pt cw boss fr','yms','a','每天帶在身上，越用越有味道','選可刻字的小皮件','皮革 鑰匙圈'],
+['👜','帆布托特包',400,1200,'xchg bday','fr st','y','a','上課上班都能背，實用度高','選有內袋、厚磅帆布的','帆布托特包'],
+['🎲','派對桌遊',500,1500,'xchg bday','fr st','y','a','收到馬上能一起玩，氣氛最好','選規則 5 分鐘學會的','桌遊 派對'],
+['🧩','樂高花束／積木',500,2000,'xchg bday','fr cr pt st','y','a','拼完當擺飾，不會枯萎的花','選尺寸適中、拼裝 1 小時內的','積木 花束'],
+['🎟️','餐券／咖啡電子禮券',300,5000,'leave thanks xchg bday','*','yms','a','真的不知道送什麼時最安全','選連鎖品牌、全台通用的','電子禮券'],
+['🎧','平價藍牙耳機',800,2000,'xchg','fr st','y','a','年輕人永遠嫌不夠一副','選有降噪、續航長的','藍牙耳機'],
+['💡','氣氛小夜燈',300,800,'xchg house','fr st','y','a','房間氛圍神器，拍照好看','選可調光、USB 充電的','小夜燈'],
+['🍳','質感鑄鐵鍋',1500,4000,'house','fr pt el','yms','a','新家開伙第一鍋，有家的感覺','附木頭鍋墊一起送','鑄鐵鍋'],
+['🍽️','對杯／餐具組',500,1500,'house bday','fr pt','yms','a','新家用得到，情侶送對杯更有意義','選陶瓷手作感，避開碗盤成套 4 件','對杯 禮盒'],
+['🥢','保溫便當盒',400,1000,'leave xchg','cw st','ym','a','帶便當族超實用','選可微波、好清洗的','保溫便當盒'],
+['🍷','紅酒／威士忌',800,6000,'thanks house cny leave','boss fr el','ms','a','體面大方，謝禮很有份量','先確定對方喝酒，開車族就不適合','紅酒 禮盒'],
+['🍶','茶具組',1000,5000,'cny house','el boss','ms','a','長輩泡茶聊天用得到','選一壺四杯以外的組合（避開 4）','茶具組'],
+['💪','按摩槍',1500,3000,'bday leave','fr pt cw','ym','a','有在運動的人一定會用','選輕量、靜音款','按摩槍'],
+['💧','香氛加濕器',600,1500,'xchg house','fr st cw','ym','a','冷氣房必備，香氛加濕一次搞定','選靜音、自動斷電的','香氛機 加濕器'],
+['🛏️','人體工學腰靠',800,2000,'leave cny','cw el boss','ms','a','久坐腰痠的人會很感謝你','選記憶棉、可拆洗的','腰靠 記憶棉'],
+['💄','品牌保養旅行組',500,1500,'bday thanks','fr pt cr','ym','f','小樣組合不怕膚質不合','選中性好用的保濕系列','保養品 旅行組'],
+['💍','簡約項鍊',1000,5000,'bday','pt','ym','a','另一半專屬，有紀念意義','選 925 銀或 K 金，附精美盒子','項鍊 925'],
+['🌷','一束花',500,1500,'bday thanks','pt cr','yms','a','儀式感滿分，當天就有驚喜','避開白花、菊花，選粉色或暖色系','花束'],
+['🧸','經典絨毛玩偶',500,1500,'bday','pt cr','y','a','抱著睡覺會想到你','選大小適中、可水洗的','絨毛玩偶'],
+['☕','手沖咖啡器具組',1500,4500,'bday house thanks leave','cw boss fr pt el st','yms','a','愛喝咖啡的人會用很久','手沖壺＋濾杯＋一包好豆子最完整','手沖咖啡 禮盒'],
+['🎒','質感後背包',2000,5000,'bday leave','pt fr cw','ym','a','新工作通勤用得到，天天背','選防潑水、有電腦夾層的素色款','後背包 筆電'],
+['🕯️','精品香氛禮盒（擴香＋蠟燭）',1500,4500,'house thanks bday','fr pt boss el cw cr st','yms','a','一盒搞定整個家的味道，送禮很有面子','選有提袋、外盒燙金的','香氛禮盒 精品'],
+['🧣','喀什米爾圍巾',2000,6000,'bday cny','pt el fr','ms','a','柔軟到會一直圍著，長輩也喜歡','選駝色、灰色經典色','喀什米爾 圍巾'],
+['🎧','降噪耳機',3000,9000,'bday xchg','pt fr','ym','a','通勤、工作都用得到的大禮','先問對方用 iPhone 還是安卓','降噪耳機']
+];
+const has=(field,k)=>field==='*'||field.split(' ').includes(k);
+const $=id=>document.getElementById(id);
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let st=Object.assign({occ:'xchg',rel:'st',age:'y',gen:'a',bud:500},LS.get('lw_st',{}));
+let seed=0,msgI=0;
+
+function chips(id,list,key){$(id).innerHTML=list.map(([v,l])=>`<button class="chip" type="button" data-v="${v}" aria-pressed="${String(st[key])===String(v)}">${l}</button>`).join('');
+  $(id).onclick=e=>{const b=e.target.closest('.chip');if(!b)return;st[key]=key==='bud'?+b.dataset.v:b.dataset.v;LS.set('lw_st',st);seed=0;msgI=0;chips(id,list,key);render()}}
+chips('c-occ',OCC,'occ');chips('c-rel',REL,'rel');chips('c-age',AGE,'age');chips('c-gen',GEN,'gen');chips('c-bud',BUD,'bud');
+
+function rnd(i){let x=Math.sin(i*99.13+seed*7.7)*10000;return x-Math.floor(x)}
+function picks(){const B=st.bud;
+  let list=G.map((g,i)=>({g,i})).filter(({g})=>{const[,,mn,mx,occ,rel,age,gen]=g;
+    if(!has(occ,st.occ)||(!has(rel,st.rel)&&!['cny','house'].includes(st.occ)))return false;if(!age.includes(st.age))return false;if(gen!=='a'&&st.gen!=='a'&&gen!==st.gen)return false;if(gen==='f'&&st.gen==='a'&&!['pt','cr','fr'].includes(st.rel))return false;
+    return mn<=B&&mx>=B*(B>=3000?0.3:0.45)});
+  list.forEach(o=>{const g=o.g;let s=0;if(g[4]!=='*')s+=2;if(g[5]!=='*')s+=2;if(g[6].length<3)s+=1;const mid=(g[2]+g[3])/2;s-=Math.abs(mid-B)/B;o.s=s+rnd(o.i)*1.6});
+  return list.sort((a,b)=>b.s-a.s)}
+/* landmines */
+const BOOM=[
+ ['⏰','時鐘、掛鐘','「送鐘」聽起來像「送終」','*','*'],
+ ['☂️','雨傘','「傘」跟「散」同音，像在說要分開','*','fr cr pt cw st'],
+ ['👟','鞋子','像在說「送你走」，曖昧對象跟另一半最忌諱','*','cr pt cw boss'],
+ ['🔪','刀、剪刀','「一刀兩斷」，喬遷送刀更不吉利','*','*'],
+ ['🍐','梨子','「梨」跟「離」同音，水果禮盒要先檢查','cny house thanks','*'],
+ ['🪭','扇子','「扇」跟「散」音近','*','*'],
+ ['🤧','手帕','以前是辦喪事回禮，帶有擦眼淚、訣別的意思','*','*'],
+ ['🪞','鏡子','易碎，有破鏡、不圓滿的聯想','house bday','*'],
+ ['🌼','菊花、白色的花','多用在喪禮，送花請選暖色系','*','*'],
+ ['🟩','綠色帽子','「戴綠帽」，送男生千萬別碰','*','*'],
+ ['4️⃣','剛好 4 個的組合','「4」跟「死」同音，長輩特別在意','cny house thanks','el boss'],
+ ['🫢','香水、內衣、太私密的東西','不熟的人收到會很尷尬，甚至被誤會','*','cw boss st cr el'],
+ ['⚖️','減肥、美白、除臭類商品','像在暗示對方哪裡不好','*','*'],
+ ['💸','明顯超過預算的貴禮','交換禮物超標會讓其他人很難做，同事收到也有壓力','xchg leave','cw st boss cr'],
+ ['🏢','印有公司 logo 的東西','人家都要離開了，還塞公司的東西給他','leave','*'],
+ ['🤡','整人禮物、搞笑廢物','抽到的人如果不熟只會尷尬','xchg','st cw'],
+ ['📏','衣服、鞋子等要尺寸的','不知道尺寸就很容易送錯','*','st cw boss cr'],
+ ['📿','宗教用品（佛珠、聖經、護身符）','對方信仰不同就很失禮','*','cw boss st cr'],
+ ['🧧','白色或黑色包裝','長輩覺得不吉利，過年請選紅色或金色','cny','el boss'],
+ ['🏃','健身器材、計步器','送長輩可能像在說他身體不好或太胖','cny bday','el'],
+ ['💐','太貴重的珠寶飾品','還沒在一起就送，對方容易有壓力','*','cr'],
+];
+function booms(){const sp=b=>(b[3]!=='*'?2:0)+(b[4]!=='*'?1:0);return BOOM.filter(b=>has(b[3],st.occ)&&has(b[4],st.rel)).map((b,i)=>[b,i]).sort((x,y)=>sp(y[0])-sp(x[0])||x[1]-y[1]).map(x=>x[0]).slice(0,6)}
+/* card messages */
+const MSG={
+ bday:['生日快樂！願你新的一歲，想要的都剛好來到身邊。','又長大一歲啦，繼續當那個閃閃發光的你。','謝謝你一直都在，生日快樂，今年也請多指教。'],
+ xchg:['不知道你是誰，但希望這份小禮物讓你今天很開心！','交換到我算你幸運 😆 新年快樂！','願這個小東西陪你暖暖地過冬。'],
+ leave:['謝謝這段時間的照顧，新的地方一定會更好！','雖然捨不得，但真心為你開心，記得常回來聚聚。','祝新工作順順利利，我們還是朋友喔。'],
+ thanks:['謝謝你幫了我這麼多，一點小心意請收下。','真的很感謝你，有空換我請你吃飯！','你的幫忙我都記得，謝謝你。'],
+ house:['恭喜入厝！祝新家住得平安、開心、天天好眠。','新家新開始，願這裡裝滿笑聲。','入厝快樂，下次換我去你家吃飯！'],
+ cny:['新年快樂，祝您身體健康、平安順心！','給您拜年了，祝新的一年萬事如意。','祝全家新春愉快、福氣滿滿。']};
+function msg(){const arr=MSG[st.occ];return arr[msgI%arr.length]}
+
+let shown=[];
+function render(){const all=picks();const n=all.length;
+  const start=(seed*5)%Math.max(n,1);shown=n?all.slice(0,5).length<=n?rot(all,start).slice(0,5):all:[];
+  const lab=x=>{const f=(L,v)=>(L.find(a=>String(a[0])===String(v))||[])[1];return f(OCC,st.occ)+'・'+f(REL,st.rel)+'・'+f(BUD,st.bud)};
+  $('sum').textContent=n?`${lab()}，共 ${n} 個選項`:'';
+  $('tags').innerHTML=shown.length?shown.map((o,i)=>{const g=o.g;return`<article class="gtag pop" style="--r:${(i%2?1:-1)*0.6}deg;animation-delay:${i*60}ms">${i===0?'<span class="rank">最推</span>':''}<div class="top"><span class="emo" aria-hidden="true">${g[0]}</span><div><h3>${g[1]}</h3><span class="price">約 NT$${g[2]}～${g[3]}</span></div></div><p class="why">${g[8]}</p><p class="tip">✓ ${g[9]}</p><a href="${buyUrl(g[10])}" target="_blank" rel="noopener sponsored">去蝦皮看 →</a></article>`}).join(''):'<div class="empty"><b>這個組合有點難送</b><p style="margin:6px 0 0">試試把預算調一格，或年齡、性別選「不限」。萬用解：電子禮券最安全。</p></div>';
+  $('more').hidden=n<=5;
+  $('boom').innerHTML=booms().map(b=>`<li><span aria-hidden="true">${b[0]}</span><div><b>${b[1]}</b>：${b[2]}</div></li>`).join('');
+  $('msg').textContent=msg()}
+function rot(a,k){return a.slice(k).concat(a.slice(0,k))}
+$('more').addEventListener('click',()=>{seed++;render();$('tags').scrollIntoView({behavior:'smooth',block:'start'})});
+$('msgNext').addEventListener('click',()=>{msgI++;$('msg').textContent=msg()});
+function copy(t,m){if(navigator.clipboard)navigator.clipboard.writeText(t).then(()=>toast(m)).catch(()=>toast('複製不了，請手動選取'));else toast('複製不了，請手動選取')}
+$('msgCopy').addEventListener('click',()=>copy($('msg').textContent,'已複製，寫在卡片上吧'));
+$('copyLink').addEventListener('click',()=>copy(SITE,'網址已複製'));
+$('share').addEventListener('click',()=>{const W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');
+  g.fillStyle='#fff4d9';g.fillRect(0,0,W,H);g.fillStyle='#ffe8b3';for(let x=-H;x<W;x+=104){g.beginPath();g.moveTo(x,H);g.lineTo(x+H,0);g.lineTo(x+H+36,0);g.lineTo(x+36,H);g.fill()}
+  g.fillStyle='#fffdf7';g.strokeStyle='#2d1f3d';g.lineWidth=8;rr(g,70,90,W-140,H-200,40);g.fill();g.stroke();
+  g.fillStyle='#e0365a';g.globalAlpha=.15;g.fillRect(70,300,W-140,40);g.globalAlpha=1;
+  g.fillStyle='#2d1f3d';g.textAlign='left';g.font='900 64px "Noto Sans TC",sans-serif';g.fillText('🎁 禮物不踩雷清單',120,200);
+  const f=(L,v)=>(L.find(a=>String(a[0])===String(v))||[])[1];g.font='500 34px "Noto Sans TC",sans-serif';g.fillStyle='#6d5f78';g.fillText(`${f(OCC,st.occ)}・送${f(REL,st.rel)}・預算 ${f(BUD,st.bud)}`,120,262);
+  shown.slice(0,4).forEach((o,i)=>{const y=410+i*150;g.fillStyle='#2d1f3d';g.font='60px serif';g.fillText(o.g[0],120,y);g.font='900 44px "Noto Sans TC",sans-serif';g.fillText(o.g[1],210,y-8);g.font='500 30px "Noto Sans TC",sans-serif';g.fillStyle='#6d5f78';g.fillText(`約 NT$${o.g[2]}～${o.g[3]}・${o.g[8].slice(0,16)}`,210,y+40)});
+  const bm='💣 別送：'+booms().slice(0,4).map(b=>b[1].split('、')[0]).join('、');g.fillStyle='#e0365a';g.font='700 36px "Noto Sans TC",sans-serif';{let line='',y=1010;for(const ch of bm){if(g.measureText(line+ch).width>W-240){g.fillText(line,120,y);line='';y+=50}line+=ch}g.fillText(line,120,y)}
+  g.fillStyle='#2d1f3d';g.font='700 32px "Noto Sans TC",sans-serif';g.fillText('3 秒選禮物 👉 onlyhandrubbing.github.io/liwu',120,1150);
+  $('shareImg').src=c.toDataURL('image/png');$('shareBox').hidden=false;$('shareBox').scrollIntoView({behavior:'smooth',block:'center'})});
+function rr(g,x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
+let tt;function toast(s){$('toast').textContent=s;$('toast').hidden=false;clearTimeout(tt);tt=setTimeout(()=>$('toast').hidden=true,2200)}
+render();
+})();
+</script>
+</body>
+</html>
