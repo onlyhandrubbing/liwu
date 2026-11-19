@@ -14,112 +14,121 @@
 <link rel="canonical" href="https://onlyhandrubbing.github.io/liwu/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <style>
-/* Layout: a single phone-width column on striped wrapping paper. Questions are ribbon rows of chips; answers are gift tags. */
+/* A quiet select-shop catalogue: kraft paper, ink, one ribbon colour. Questions are compact rows; answers are a numbered list with prices on the right. */
 :root{
-  --paper:#fff4d9; --stripe:#ffe8b3; --ink:#2d1f3d; --muted:#6d5f78;
-  --tag:#fffdf7; --ribbon:#e0365a; --ribbon-ink:#fff; --mint:#2f9e75; --sun:#ffc93c; --sun-ink:#3a2700; --line:#2d1f3d;
-  --f-hand:"Huninn","Noto Sans TC",system-ui,sans-serif;
-  --f-body:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
-  --shadow:0 3px 0 var(--line);
+  --paper:#f1ebe1; --card:#faf7f1; --ink:#22201c; --muted:#7a726a; --line:#dcd3c5; --chip:#e8e0d2;
+  --rib:#8c2a35; --rib-soft:#efdcdc;
+  --serif:"Noto Serif TC","Noto Serif CJK TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#1f1726; --stripe:#271d30; --ink:#f6eefc; --muted:#b3a5bf; --tag:#2c2236; --ribbon:#ff5a7a; --ribbon-ink:#1f0610; --mint:#5fd1a6; --sun:#f5c044; --sun-ink:#2a1c00; --line:#0d0911; color-scheme:dark}}
+  --paper:#1a1816; --card:#221f1c; --ink:#eee8de; --muted:#a59d93; --line:#38332d; --chip:#2e2a25; --rib:#e0727c; --rib-soft:#3a2326; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#1f1726; --stripe:#271d30; --ink:#f6eefc; --muted:#b3a5bf; --tag:#2c2236; --ribbon:#ff5a7a; --ribbon-ink:#1f0610; --mint:#5fd1a6; --sun:#f5c044; --sun-ink:#2a1c00; --line:#0d0911; color-scheme:dark}
+  --paper:#1a1816; --card:#221f1c; --ink:#eee8de; --muted:#a59d93; --line:#38332d; --chip:#2e2a25; --rib:#e0727c; --rib-soft:#3a2326; color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-body{margin:0;color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
-  background-color:var(--paper);background-image:repeating-linear-gradient(135deg,var(--stripe) 0 18px,transparent 18px 52px)}
-.app{max-width:520px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 60px;display:grid;gap:16px}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;background:var(--paper)}
+.app{max-width:540px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:20px 72px}
 button{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--ribbon);outline-offset:2px}
-header{position:relative;background:var(--tag);border:3px solid var(--line);border-radius:22px;padding:20px 18px 18px;box-shadow:var(--shadow);overflow:hidden}
-header::before{content:"";position:absolute;left:0;right:0;top:50%;height:22px;margin-top:-11px;background:var(--ribbon);opacity:.14}
-header::after{content:"";position:absolute;top:0;bottom:0;right:58px;width:22px;background:var(--ribbon);opacity:.14}
-h1{position:relative;font-family:var(--f-hand);font-weight:400;font-size:clamp(30px,8vw,40px);line-height:1.1;margin:0;text-wrap:balance}
-h1 em{font-style:normal;color:var(--ribbon)}
-.lead{position:relative;margin:8px 0 0;color:var(--muted);font-size:15px}
-.bow{position:absolute;right:30px;top:-6px;font-size:44px;transform:rotate(12deg)}
-.q{background:var(--tag);border:3px solid var(--line);border-radius:22px;padding:14px 14px 16px;box-shadow:var(--shadow);display:grid;gap:12px}
-.qrow{display:grid;gap:6px}
-.qrow b{font-family:var(--f-hand);font-weight:400;font-size:19px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:2px solid var(--line);background:var(--tag);border-radius:999px;padding:5px 13px;cursor:pointer;font-size:15px;transition:transform .12s}
-.chip:hover{transform:translateY(-1px)}
-.chip[aria-pressed="true"]{background:var(--sun);color:var(--sun-ink);font-weight:700;transform:rotate(-2deg)}
-.sec{font-family:var(--f-hand);font-size:24px;margin:6px 2px -4px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 8px}
-.sec span{white-space:nowrap}
-.sec small{font-family:var(--f-body);font-size:13px;color:var(--muted)}
-.tags{display:grid;gap:14px}
-.gtag{position:relative;background:var(--tag);border:3px solid var(--line);border-radius:10px 22px 22px 10px;padding:14px 16px 14px 46px;box-shadow:var(--shadow);display:grid;gap:4px;transform:rotate(var(--r,0deg))}
-.gtag::before{content:"";position:absolute;left:14px;top:22px;width:14px;height:14px;border-radius:50%;border:3px solid var(--line);background:var(--paper)}
-.gtag::after{content:"";position:absolute;left:-24px;top:26px;width:42px;height:3px;background:var(--ribbon);transform:rotate(-14deg)}
-.gtag .top{display:flex;align-items:center;gap:10px}
-.gtag .emo{font-size:34px;line-height:1}
-.gtag h3{margin:0;font-size:19px;font-weight:900;line-height:1.25}
-.gtag .price{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-.gtag .why{margin:2px 0 0;font-size:15px}
-.gtag .tip{margin:0;font-size:13.5px;color:var(--mint);font-weight:700}
-.gtag .rank{position:absolute;right:12px;top:-12px;background:var(--ribbon);color:var(--ribbon-ink);font-family:var(--f-hand);font-size:14px;border-radius:999px;padding:2px 10px;border:2px solid var(--line)}
-.gtag a{justify-self:start;margin-top:6px;text-decoration:none;font-weight:700;font-size:14px;color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:3px 12px;background:var(--sun)}
-.boom{background:var(--tag);border:3px dashed var(--ribbon);border-radius:22px;padding:14px 16px;display:grid;gap:8px}
-.boom ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.boom li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:15px}
-.boom li span{font-size:22px;line-height:1.2}
-.boom li b{color:var(--ribbon)}
-.card{background:var(--tag);border:3px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow);display:grid;gap:10px}
-.msg{font-family:var(--f-hand);font-size:21px;line-height:1.5;background:var(--paper);border-radius:14px;padding:14px 16px;border:2px dashed var(--line)}
-.row{display:flex;gap:8px;flex-wrap:wrap}
-.btn{border:2.5px solid var(--line);background:var(--tag);border-radius:14px;padding:9px 14px;cursor:pointer;font-family:var(--f-hand);font-size:17px;box-shadow:var(--shadow)}
-.btn:active{transform:translateY(3px);box-shadow:none}
-.btn.red{background:var(--ribbon);color:var(--ribbon-ink)}
-.empty{background:var(--tag);border:3px dashed var(--line);border-radius:22px;padding:22px;text-align:center}
-.shareimg{display:grid;justify-items:center;gap:6px}
-.shareimg img{max-width:min(100%,300px);border-radius:12px;border:2px solid var(--line)}
-.fine{font-size:12px;color:var(--muted);margin:0;text-align:center}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:14px;font-weight:700;z-index:40;max-width:calc(100% - 32px);text-align:center}
-.pop{animation:pop .3s ease-out both}
-@keyframes pop{0%{transform:translateY(8px) rotate(var(--r,0deg));opacity:0}100%{transform:rotate(var(--r,0deg));opacity:1}}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rib);outline-offset:3px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);letter-spacing:.1em}
+.logo{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-weight:900;font-size:18px;color:var(--ink);letter-spacing:.04em}
+.seal{width:24px;height:24px;border-radius:5px;background:var(--rib);color:#fff;font-size:13px;display:grid;place-items:center;transform:rotate(-4deg);font-family:var(--serif)}
+.knot{width:22px;height:22px;position:relative;flex:none}
+.knot::before,.knot::after{content:"";position:absolute;background:var(--rib)}
+.knot::before{left:0;right:0;top:9px;height:4px}
+.knot::after{top:0;bottom:0;left:9px;width:4px}
+.knot i{position:absolute;inset:3px;border:1.5px solid var(--ink);border-radius:3px}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(30px,8.4vw,40px);line-height:1.25;margin:40px 0 0;letter-spacing:.01em}
+.lead{margin:12px 0 0;color:var(--muted);font-size:15px}
+.q{margin-top:30px;border-top:1px solid var(--ink)}
+.qrow{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);align-items:start}
+.qrow b{font-size:13px;color:var(--muted);font-weight:500;padding-top:6px;letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:0;background:transparent;border-radius:999px;padding:4px 12px;cursor:pointer;font-size:15px;color:var(--ink);transition:background .15s}
+.chip:hover{background:var(--chip)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);font-weight:500}
+.sec{display:flex;justify-content:space-between;align-items:baseline;gap:4px 10px;flex-wrap:wrap;margin-top:44px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.sec h2{margin:0;font-family:var(--serif);font-weight:900;font-size:22px}
+.sec small{font-size:12.5px;color:var(--muted)}
+.item{display:grid;grid-template-columns:44px 1fr auto;gap:2px 10px;padding:18px 0 16px;border-bottom:1px solid var(--line);animation:in .35s ease-out both}
+.no{font-family:var(--serif);font-size:14px;color:var(--muted);padding-top:5px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.item h3{margin:0;font-family:var(--serif);font-weight:700;font-size:20px;line-height:1.4}
+.price{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;padding-top:6px;text-align:right}
+.item .body{grid-column:2/4}
+.why{margin:4px 0 0;font-size:15px}
+.tip{margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+.tip::before{content:"挑選｜";color:var(--rib);font-weight:700}
+.item a{display:inline-block;margin-top:10px;font-size:14px;font-weight:700;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:1px}
+.item.first{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px 16px 12px;margin-top:14px;position:relative}
+.item.first .no{color:var(--rib);font-weight:700}
+.item.first::after{content:"最推";position:absolute;top:-10px;left:12px;background:var(--rib);color:#fff;font-size:12px;font-weight:700;padding:1px 9px;border-radius:4px;letter-spacing:.1em}
+.item.first a{background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:6px 16px}
+.more-row{margin-top:16px}
+.boom ul{list-style:none;margin:0;padding:0}
+.boom li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.boom li{display:grid;grid-template-columns:18px 1fr;gap:0 8px}
+.boom li::before{content:"×";color:var(--rib);font-weight:700;font-size:18px;line-height:1.4}
+.boom li b{font-family:var(--serif);font-weight:700;display:block}
+.boom li span{color:var(--muted);font-size:14px;grid-column:2}
+.note{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:26px 22px 20px;position:relative;box-shadow:0 1px 0 var(--line),0 14px 30px -24px rgba(40,30,20,.5)}
+.note::before{content:"";position:absolute;left:0;right:0;top:12px;border-top:1px dashed var(--line)}
+.msg{font-family:var(--serif);font-size:20px;line-height:1.75;margin-top:6px}
+.msg-by{margin-top:10px;text-align:right;color:var(--muted);font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{border:1px solid var(--ink);background:transparent;border-radius:999px;padding:9px 18px;cursor:pointer;font-size:14.5px;font-weight:700}
+.btn:hover{background:var(--chip)}
+.btn.dark{background:var(--ink);color:var(--paper)}
+.btn.dark:hover{opacity:.9}
+.share{margin-top:44px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.share h2{margin:0 0 4px;font-family:var(--serif);font-size:19px}
+.share p{margin:0;color:var(--muted);font-size:14px}
+.empty{padding:24px 0;color:var(--muted);border-bottom:1px solid var(--line)}
+.empty b{color:var(--ink);font-family:var(--serif)}
+.shareimg{display:grid;justify-items:center;gap:6px;margin-top:16px}
+.shareimg img{max-width:min(100%,300px);border-radius:8px;border:1px solid var(--line)}
+.fine{font-size:12px;color:var(--muted);margin:40px 0 0;line-height:1.8}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px;font-weight:700;font-size:14px;z-index:40;max-width:calc(100% - 40px);text-align:center}
+@keyframes in{from{transform:translateY(6px);opacity:0}to{transform:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
-  <header>
-    <span class="bow" aria-hidden="true">🎀</span>
-    <h1>不知道送什麼？<br><em>3 秒選好不踩雷</em></h1>
-    <p class="lead">點一點場合、送誰、預算，給你安全又有質感的禮物，順便告訴你這次千萬別送什麼。</p>
-  </header>
+  <div class="top"><span class="logo"><span class="seal" aria-hidden="true">禮</span>禮物不踩雷</span><span>送禮前看一下</span></div>
+  <h1>不知道送什麼的時候，<br>先看這五個。</h1>
+  <p class="lead">選好場合、對象和預算，給你不會出錯的禮物，也告訴你這次別送什麼。</p>
 
   <section class="q" aria-label="送禮條件">
-    <div class="qrow"><b>什麼場合？</b><div class="chips" id="c-occ"></div></div>
-    <div class="qrow"><b>送給誰？</b><div class="chips" id="c-rel"></div></div>
-    <div class="qrow"><b>對方大概幾歲？</b><div class="chips" id="c-age"></div></div>
-    <div class="qrow"><b>對方是？</b><div class="chips" id="c-gen"></div></div>
-    <div class="qrow"><b>預算多少？</b><div class="chips" id="c-bud"></div></div>
+    <div class="qrow"><b>場合</b><div class="chips" id="c-occ"></div></div>
+    <div class="qrow"><b>送誰</b><div class="chips" id="c-rel"></div></div>
+    <div class="qrow"><b>年紀</b><div class="chips" id="c-age"></div></div>
+    <div class="qrow"><b>對方</b><div class="chips" id="c-gen"></div></div>
+    <div class="qrow"><b>預算</b><div class="chips" id="c-bud"></div></div>
   </section>
 
-  <div class="sec"><span>🎁 安全牌</span><small id="sum"></small></div>
-  <div class="tags" id="tags"></div>
-  <div class="row" style="justify-content:center"><button class="btn" id="more" type="button">再換幾個</button></div>
+  <div class="sec"><h2>送這些不會錯</h2><small id="sum"></small></div>
+  <div id="tags"></div>
+  <div class="more-row"><button class="btn" id="more" type="button">再換五個</button></div>
 
-  <div class="sec"><span>💣 這次千萬別送</span></div>
+  <div class="sec"><h2>這次別送</h2></div>
   <div class="boom"><ul id="boom"></ul></div>
 
-  <div class="sec"><span>✍️ 卡片寫這句</span></div>
-  <div class="card">
-    <div class="msg" id="msg"></div>
-    <div class="row"><button class="btn" id="msgNext" type="button">換一句</button><button class="btn" id="msgCopy" type="button">複製</button></div>
-  </div>
+  <div class="sec"><h2>卡片上寫這句</h2></div>
+  <div class="note"><div class="msg" id="msg"></div><div class="msg-by">— 你的名字</div></div>
+  <div class="row"><button class="btn" id="msgNext" type="button">換一句</button><button class="btn" id="msgCopy" type="button">複製這句</button></div>
 
-  <div class="card">
-    <div class="row" style="justify-content:center"><button class="btn red" id="share" type="button">做成清單圖，傳給一起送的人</button><button class="btn" id="copyLink" type="button">複製網址</button></div>
-    <div class="shareimg" id="shareBox" hidden><img id="shareImg" alt="禮物清單圖"><span class="fine">長按或右鍵存圖，貼到 LINE、IG、Threads</span></div>
+  <div class="share">
+    <h2>要跟別人合送？</h2>
+    <p>做成一張清單圖，丟到群組一起挑。</p>
+    <div class="row"><button class="btn dark" id="share" type="button">做成清單圖</button><button class="btn" id="copyLink" type="button">複製網址</button></div>
+    <div class="shareimg" id="shareBox" hidden><img id="shareImg" alt="禮物清單圖"><span style="font-size:12.5px;color:var(--muted)">長按或右鍵存圖，貼到 LINE、IG、Threads</span></div>
   </div>
-  <p class="fine">「去蝦皮看」為推薦連結，透過連結購買站長可能獲得分潤，你的價格不受影響。習俗禁忌各家不同，最懂對方的還是你。</p>
+  <p class="fine">「在蝦皮看」為推薦連結，透過連結購買站長可能獲得分潤，你的價格不受影響。價格為大略區間，習俗禁忌各家不同，最懂對方的還是你。</p>
 </div>
 <div class="toast" id="toast" hidden></div>
 
@@ -234,7 +243,7 @@ function booms(){const sp=b=>(b[3]!=='*'?2:0)+(b[4]!=='*'?1:0);return BOOM.filte
 /* card messages */
 const MSG={
  bday:['生日快樂！願你新的一歲，想要的都剛好來到身邊。','又長大一歲啦，繼續當那個閃閃發光的你。','謝謝你一直都在，生日快樂，今年也請多指教。'],
- xchg:['不知道你是誰，但希望這份小禮物讓你今天很開心！','交換到我算你幸運 😆 新年快樂！','願這個小東西陪你暖暖地過冬。'],
+ xchg:['不知道你是誰，但希望這份小禮物讓你今天很開心！','交換到我算你幸運，新年快樂！','願這個小東西陪你暖暖地過冬。'],
  leave:['謝謝這段時間的照顧，新的地方一定會更好！','雖然捨不得，但真心為你開心，記得常回來聚聚。','祝新工作順順利利，我們還是朋友喔。'],
  thanks:['謝謝你幫了我這麼多，一點小心意請收下。','真的很感謝你，有空換我請你吃飯！','你的幫忙我都記得，謝謝你。'],
  house:['恭喜入厝！祝新家住得平安、開心、天天好眠。','新家新開始，願這裡裝滿笑聲。','入厝快樂，下次換我去你家吃飯！'],
@@ -245,10 +254,10 @@ let shown=[];
 function render(){const all=picks();const n=all.length;
   const start=(seed*5)%Math.max(n,1);shown=n?all.slice(0,5).length<=n?rot(all,start).slice(0,5):all:[];
   const lab=x=>{const f=(L,v)=>(L.find(a=>String(a[0])===String(v))||[])[1];return f(OCC,st.occ)+'・'+f(REL,st.rel)+'・'+f(BUD,st.bud)};
-  $('sum').textContent=n?`${lab()}，共 ${n} 個選項`:'';
-  $('tags').innerHTML=shown.length?shown.map((o,i)=>{const g=o.g;return`<article class="gtag pop" style="--r:${(i%2?1:-1)*0.6}deg;animation-delay:${i*60}ms">${i===0?'<span class="rank">最推</span>':''}<div class="top"><span class="emo" aria-hidden="true">${g[0]}</span><div><h3>${g[1]}</h3><span class="price">約 NT$${g[2]}～${g[3]}</span></div></div><p class="why">${g[8]}</p><p class="tip">✓ ${g[9]}</p><a href="${buyUrl(g[10])}" target="_blank" rel="noopener sponsored">去蝦皮看 →</a></article>`}).join(''):'<div class="empty"><b>這個組合有點難送</b><p style="margin:6px 0 0">試試把預算調一格，或年齡、性別選「不限」。萬用解：電子禮券最安全。</p></div>';
+  $('sum').textContent=n?`${lab()}・共 ${n} 個`:'';
+  $('tags').innerHTML=shown.length?shown.map((o,i)=>{const g=o.g;return`<article class="item${i===0?' first':''}" style="animation-delay:${i*60}ms"><span class="no">No.${String(i+1).padStart(2,'0')}</span><h3>${g[1]}</h3><span class="price">$${g[2].toLocaleString()}–${g[3].toLocaleString()}</span><div class="body"><p class="why">${g[8]}</p><p class="tip">${g[9]}</p><a href="${buyUrl(g[10])}" target="_blank" rel="noopener sponsored">在蝦皮看</a></div></article>`}).join(''):'<div class="empty"><b>這個組合有點難送。</b><br>把預算調一格，或年紀、對方選「不限」試試。真的沒頭緒，電子禮券最安全。</div>';
   $('more').hidden=n<=5;
-  $('boom').innerHTML=booms().map(b=>`<li><span aria-hidden="true">${b[0]}</span><div><b>${b[1]}</b>：${b[2]}</div></li>`).join('');
+  $('boom').innerHTML=booms().map(b=>`<li><b>${b[1]}</b><span>${b[2]}</span></li>`).join('');
   $('msg').textContent=msg()}
 function rot(a,k){return a.slice(k).concat(a.slice(0,k))}
 $('more').addEventListener('click',()=>{seed++;render();$('tags').scrollIntoView({behavior:'smooth',block:'start'})});
@@ -257,14 +266,17 @@ function copy(t,m){if(navigator.clipboard)navigator.clipboard.writeText(t).then(
 $('msgCopy').addEventListener('click',()=>copy($('msg').textContent,'已複製，寫在卡片上吧'));
 $('copyLink').addEventListener('click',()=>copy(SITE,'網址已複製'));
 $('share').addEventListener('click',()=>{const W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');
-  g.fillStyle='#fff4d9';g.fillRect(0,0,W,H);g.fillStyle='#ffe8b3';for(let x=-H;x<W;x+=104){g.beginPath();g.moveTo(x,H);g.lineTo(x+H,0);g.lineTo(x+H+36,0);g.lineTo(x+36,H);g.fill()}
-  g.fillStyle='#fffdf7';g.strokeStyle='#2d1f3d';g.lineWidth=8;rr(g,70,90,W-140,H-200,40);g.fill();g.stroke();
-  g.fillStyle='#e0365a';g.globalAlpha=.15;g.fillRect(70,300,W-140,40);g.globalAlpha=1;
-  g.fillStyle='#2d1f3d';g.textAlign='left';g.font='900 64px "Noto Sans TC",sans-serif';g.fillText('🎁 禮物不踩雷清單',120,200);
-  const f=(L,v)=>(L.find(a=>String(a[0])===String(v))||[])[1];g.font='500 34px "Noto Sans TC",sans-serif';g.fillStyle='#6d5f78';g.fillText(`${f(OCC,st.occ)}・送${f(REL,st.rel)}・預算 ${f(BUD,st.bud)}`,120,262);
-  shown.slice(0,4).forEach((o,i)=>{const y=410+i*150;g.fillStyle='#2d1f3d';g.font='60px serif';g.fillText(o.g[0],120,y);g.font='900 44px "Noto Sans TC",sans-serif';g.fillText(o.g[1],210,y-8);g.font='500 30px "Noto Sans TC",sans-serif';g.fillStyle='#6d5f78';g.fillText(`約 NT$${o.g[2]}～${o.g[3]}・${o.g[8].slice(0,16)}`,210,y+40)});
-  const bm='💣 別送：'+booms().slice(0,4).map(b=>b[1].split('、')[0]).join('、');g.fillStyle='#e0365a';g.font='700 36px "Noto Sans TC",sans-serif';{let line='',y=1010;for(const ch of bm){if(g.measureText(line+ch).width>W-240){g.fillText(line,120,y);line='';y+=50}line+=ch}g.fillText(line,120,y)}
-  g.fillStyle='#2d1f3d';g.font='700 32px "Noto Sans TC",sans-serif';g.fillText('3 秒選禮物 👉 onlyhandrubbing.github.io/liwu',120,1150);
+  const SER='"Noto Serif TC","Noto Serif CJK TC",serif',SAN='"Noto Sans TC","Noto Sans CJK TC",sans-serif';
+  g.fillStyle='#f1ebe1';g.fillRect(0,0,W,H);g.fillStyle='#8c2a35';g.fillRect(0,0,W,14);
+  g.fillStyle='#22201c';g.textAlign='left';g.font=`900 66px ${SER}`;g.fillText('這次送這些',90,170);
+  const f=(L,v)=>(L.find(a=>String(a[0])===String(v))||[])[1];g.font=`500 32px ${SAN}`;g.fillStyle='#7a726a';g.fillText(`${f(OCC,st.occ)}・送${f(REL,st.rel)}・預算 ${f(BUD,st.bud)}`,90,230);
+  g.fillStyle='#22201c';g.fillRect(90,275,W-180,3);
+  shown.slice(0,5).forEach((o,i)=>{const y=355+i*120;g.fillStyle='#7a726a';g.font=`500 28px ${SER}`;g.fillText('No.0'+(i+1),90,y);
+    g.fillStyle='#22201c';g.font=`700 44px ${SER}`;g.fillText(o.g[1],230,y);g.textAlign='right';g.fillStyle='#7a726a';g.font=`500 28px ${SAN}`;g.fillText(`$${o.g[2]}–${o.g[3]}`,W-90,y);g.textAlign='left';
+    g.font=`400 28px ${SAN}`;g.fillText(o.g[8].slice(0,22),230,y+44);g.fillStyle='#dcd3c5';g.fillRect(90,y+72,W-180,2)});
+  g.fillStyle='#8c2a35';g.font=`700 30px ${SAN}`;g.fillText('這次別送',90,1020);g.fillStyle='#22201c';g.font=`500 32px ${SAN}`;
+  {const bm=booms().slice(0,4).map(b=>b[1].split('、')[0]).join('・');let line='',y=1070;for(const ch of bm){if(g.measureText(line+ch).width>W-180){g.fillText(line,90,y);line='';y+=46}line+=ch}g.fillText(line,90,y)}
+  g.fillStyle='#7a726a';g.font=`500 28px ${SAN}`;g.fillText('禮物不踩雷　onlyhandrubbing.github.io/liwu',90,1270);
   $('shareImg').src=c.toDataURL('image/png');$('shareBox').hidden=false;$('shareBox').scrollIntoView({behavior:'smooth',block:'center'})});
 function rr(g,x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
 let tt;function toast(s){$('toast').textContent=s;$('toast').hidden=false;clearTimeout(tt);tt=setTimeout(()=>$('toast').hidden=true,2200)}
